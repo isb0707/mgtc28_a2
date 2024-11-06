@@ -174,11 +174,12 @@ def ingest_csv_data(filename: str):
     #2 Use pandas to load the CSV 'filename' into a dataframe which we'll call 'df'. If you are doing
     # any cleaning of the dataframe after loading it, make a new variable called 'cleaned_df' and store the cleaned
     # dataframe there.
-    df = pd.read_csv('')
+    df = pd.read_csv('legacy_employees.csv')
+    print(df)
     #3 Now that you have the CSV data loaded into a dataframe, you need to insert the data into the SQL database.
     # Using the dataframe that you created above, as well as the database connection that you have instantiated,
     # use one of the helper functions above to insert the data into the database.
-
+    insert_employee_data_into_db(db_connection, df)
     #4 Now to show that you've finished processing the CSV file, move the file over to the hist folder 
     # Hint: use shutil.move and read the parameters it takes)
     # Hint: I personally use f-strings to use variables in the middle of strings, so in the destination path to move the file, I'd use f"hist/{filename}"
@@ -197,5 +198,5 @@ def print_employee_dataframe():
 
 if __name__ == '__main__':
     #TODO: UNCOMMENT THIS TO INGEST THE DATA ONCE YOU HAVE COMPLETED THE FUNCTION ABOVE
-    # ingest_csv_data("legacy_employees.csv")
+    ingest_csv_data("legacy_employees.csv")
     print_employee_dataframe()
