@@ -170,11 +170,11 @@ def ingest_csv_data(filename: str):
 
     #1 Connect to the database file "utsc-excercise" using one of the helper functions above
     #  and save the return value into a variable called db_connection.
-    
+    db_connection = connect_to_db("utsc-exercise.db")
     #2 Use pandas to load the CSV 'filename' into a dataframe which we'll call 'df'. If you are doing
     # any cleaning of the dataframe after loading it, make a new variable called 'cleaned_df' and store the cleaned
     # dataframe there.
-
+    df = pd.read_csv('')
     #3 Now that you have the CSV data loaded into a dataframe, you need to insert the data into the SQL database.
     # Using the dataframe that you created above, as well as the database connection that you have instantiated,
     # use one of the helper functions above to insert the data into the database.
