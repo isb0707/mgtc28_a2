@@ -179,7 +179,10 @@ def ingest_csv_data(filename: str):
     #3 Now that you have the CSV data loaded into a dataframe, you need to insert the data into the SQL database.
     # Using the dataframe that you created above, as well as the database connection that you have instantiated,
     # use one of the helper functions above to insert the data into the database.
-    insert_employee_data_into_db(db_connection, df)
+    # from last part when we print the legacy_employees dataframe, I realize that there is a extra column(unnamed :0), 
+    #we have to drop that, then we can insert employee dataframe into db
+    #df = df.drop(columns=['Unnamed :0'])
+    #insert_employee_data_into_db(db_connection, df)
     #4 Now to show that you've finished processing the CSV file, move the file over to the hist folder 
     # Hint: use shutil.move and read the parameters it takes)
     # Hint: I personally use f-strings to use variables in the middle of strings, so in the destination path to move the file, I'd use f"hist/{filename}"
