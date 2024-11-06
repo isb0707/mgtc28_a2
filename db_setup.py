@@ -187,8 +187,10 @@ def ingest_csv_data(filename: str):
     # Hint: use shutil.move and read the parameters it takes)
     # Hint: I personally use f-strings to use variables in the middle of strings, so in the destination path to move the file, I'd use f"hist/{filename}"
     # If you want the formal definition of what an f-string does: https://www.geeksforgeeks.org/formatted-string-literals-f-strings-python/
-    
-    pass # <- REMOVE THIS WHEN YOU IMPLEMENT YOUR FUNCTION
+    filename = 'legacy_employees.csv'
+    destination = f'hist/{filename}'
+    shutil.move(filename, destination)
+    #pass # <- REMOVE THIS WHEN YOU IMPLEMENT YOUR FUNCTION
 
 def print_employee_dataframe():
     """Connects to the database, puts the Employee table into a dataframe, and then prints the dataframe.
